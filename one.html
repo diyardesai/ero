@@ -20,7 +20,7 @@
             position: absolute;
             top: 20%;
             left: 68%;
-            transform: translate(-50%, 10%);
+            transform: translate(-50%, 50% );
             color: rgb(158, 18, 18);
             font-size: 100px;
             font-weight: bold;
@@ -34,5 +34,40 @@
     <div class="text1">Optimizer</div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center=Berkeley,CA&zoom=14&size=400x400&key=AIzaSyAmfT2OP4pU6EOrRRsqp57vBSDMnb3O7Is&signature=0gNSuVBf2v4mxZOaeZilxBcUBqw=" alt = "Google Maps of Berkeley"></img>
   </body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Transport Route Optimizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Eco-Transport Route Optimizer</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Find Route</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="search">
+        <input type="text" placeholder="Enter your destination..." id="destination">
+        <button onclick="findRoute()">Find Route</button>
+    </section>
+
+    <section id="map">
+        <p>Map will be displayed here.</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
 </html>
