@@ -2,13 +2,13 @@ let map;
 let geocoder;
 
 function initMap() {
-    // Initialize the map centered on a default location (Los Angeles for example)
+  //  default location 
     map = new google.maps.Map(document.getElementById("map-canvas"), {
         center: { lat: 34.0522, lng: -118.2437 }, // Los Angeles
         zoom: 12,
     });
 
-    // Initialize the geocoder
+    // geocoder
     geocoder = new google.maps.Geocoder();
 }
 
