@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmfT2OP4pU6EOrRRsqp57vBSDMnb3O7Is&callback=initMap"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco-Transport Route Optimizer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <script src="script.js"></script>
     <header>
         <h1 id="title">Eco-Transport Route Optimizer</h1>
         <nav>
@@ -19,8 +21,9 @@
     </header>
 
     <section id="search">
-        <input type="text" placeholder="Enter your destination..." id="destination">
-        <button onclick="findRoute()">Find Route</button>
+        <input id="start" type="text" placeholder="Enter start location">
+         <input id="end" type="text" placeholder="Enter destination">
+        <button onclick="calcRoute()">Find Route</button>    
     </section>
 
     <section id="map" style="width: 100%; height: 400px;">
@@ -28,7 +31,7 @@
     </section>
 
     <script src="script.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmfT2OP4pU6EOrRRsqp57vBSDMnb3O7Is&callback=initMap"></script>
+    
 </body>
 </html>
 
