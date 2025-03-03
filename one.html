@@ -25,7 +25,9 @@
          <input id="end" type="text" placeholder="Enter destination">
         <button onclick="calcRoute()">Find Route</button>    
     </section>
-
+        <button onclick="setTravelMode('DRIVING')">Driving</button>
+         <button onclick="setTravelMode('BICYCLING')">Biking</button>
+        <button onclick="setTravelMode('TRANSIT')">Bus</button>
     <section id="map" style="width: 100%; height: 400px;">
         <div id="map-canvas" style="width: 100%; height: 400px;"></div>
     </section>
