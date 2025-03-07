@@ -23,6 +23,14 @@
     <section id="search">
         <input id="start" type="text" placeholder="Enter start location">
          <input id="end" type="text" placeholder="Enter destination">
+
+        <label for="time">Select Time:</label>
+        <input type="datetime-local" id="time">
+
+        <select id="timeType">
+            <option value = "departure">Departure Time</option>
+            <option value = "arrival">Arrival Time</option>
+        </select>
         <button onclick="calcRoute()">Find Route</button>    
         
     </section>
@@ -34,7 +42,7 @@
     </section>
 
     <div id="output" style="margin-top: 10px; font-size: 18px;"></div>
-    
+
     <script src="script.js"></script>
     
 </body>
