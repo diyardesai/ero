@@ -4,6 +4,7 @@ let map;
 let geocoder;
 let directionsService;
 let directionsRenderer;
+var selectedMode = "DRIVING";
 
 function initMap() {
   directionsService = new google.maps.DirectionsService();
@@ -16,6 +17,12 @@ function initMap() {
   map = new google.maps.Map(document.getElementById("map"), mapOptions);
   directionsRenderer.setMap(map);
 }
+function setTravelMode(mode) {
+  selectedMode = mode;
+  calcRoute(); 
+}
+
+
 function calcRoute() {
   var start = document.getElementById("start").value;
     var end = document.getElementById("end").value;
@@ -28,12 +35,18 @@ function calcRoute() {
     var request = {
         origin: start,
         destination: end,
-        travelMode: google.maps.TravelMode.DRIVING 
+        travelMode: google.maps.TravelMode[selectedMode]
     };
 
     directionsService.route(request, function (result, status) {
         if (status === google.maps.DirectionsStatus.OK) {
             directionsRenderer.setDirections(result);
+
+            var leg = result.routes[0].legs[0]; 
+            document.getElementById("output").innerHTML = `
+                <strong>Estimated Travel Time:</strong> ${leg.duration.text} <br>
+                <strong>Distance:</strong> ${leg.distance.text}
+            `;
         } else {
             alert("Could not calculate route: " + status);
         }
