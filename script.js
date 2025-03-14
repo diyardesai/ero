@@ -38,25 +38,40 @@ function calcRoute() {
     var request = {
         origin: start,
         destination: end,
-        travelMode: google.maps.TravelMode[selectedMode]
-    };
+        // waypoints: [
+        //   {
+        //     location: 'Joplin, MO',
+        //     stopover: false
+        //   },{
+        //     location: 'Oklahoma City, OK',
+        //     stopover: true
+        //   }],
+        //provideRouteAlternatives: false,
+        travelMode: google.maps.TravelMode[selectedMode],
+        drivingOptions: {
+          //arrivalTime: new Date(/* now, or future date */),
+          departureTime: new Date(/* now, or future date */)//,
+          //trafficModel: 'pessimistic'
+        }//,
+        //unitSystem: google.maps.UnitSystem.IMPERIAL
+      }
     var selectedTime;
     if (timeInput){
         selectedTime = new Date(timeInput);
         //alert("Selected Departure Time: ", new Date(timeInput));
 
         if(timeType === "departure"){
-            request.departureTime = selectedTime;
-            alert(request.departureTime)
+            request.drivingOptions.departureTime = selectedTime;
+            alert(request.drivingOptions.departureTime)
         } else if(timeType === "arrival"){
-            request.arrivalTime = selectedTime;
-            alert(request.arrivalTime)
+            request.drivingOptions.arrivalTime = selectedTime;
+            alert(request.drivingOptions.arrivalTime)
         }
     }
-    alert(request.departureTime); 
+    alert(request.drivingOptions.departureTime); 
     alert("calcRoute function is being triggered"); 
 
-    directionsService.route(request.departureTime, function (result, status) {
+    directionsService.route(request, function (result, status) {
         alert("inside route function"); 
         console.log("Google Maps API Response: ", result);
         console.log("API Status: ", status);
