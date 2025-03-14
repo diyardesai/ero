@@ -62,19 +62,16 @@ function calcRoute() {
 
         if(timeType === "departure"){
             request.drivingOptions.departureTime = selectedTime;
-            alert(request.drivingOptions.departureTime)
+            //alert(request.drivingOptions.departureTime)
         } else if(timeType === "arrival"){
             request.drivingOptions.arrivalTime = selectedTime;
-            alert(request.drivingOptions.arrivalTime)
+           // alert(request.drivingOptions.arrivalTime)
         }
     }
-    alert(request.drivingOptions.departureTime); 
-    alert("calcRoute function is being triggered"); 
+   // alert("calcRoute function is being triggered"); 
 
     directionsService.route(request, function (result, status) {
-        alert("inside route function"); 
-        console.log("Google Maps API Response: ", result);
-        console.log("API Status: ", status);
+      //  alert("inside route function"); 
         if (status === google.maps.DirectionsStatus.OK) {
             directionsRenderer.setDirections(result);
 
@@ -87,7 +84,7 @@ function calcRoute() {
             if (timeInput && timeType === "departure") {
                 var arrivalTime = new Date(selectedTime.getTime() + travelTime * 1000); // Add travel time to departure time
                 arrivalTimeStr = arrivalTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-                alert(arrivalTimeStr);
+               // alert(arrivalTimeStr);
             } // If arrival time is provided, just display it
             else if (timeInput && timeType === "arrival") {
                 arrivalTimeStr = selectedTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
