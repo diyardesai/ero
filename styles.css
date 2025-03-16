@@ -1,16 +1,17 @@
+/* reset default margin, padding and set box-sizing to border box for all elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+/* body styling: sets font, bg color, text color, and centers the content */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f9;
     color: #333;
     text-align: center;
 }
-
+/* header styling: gradient bg, text color, padding, and animation */
 header {
     background: linear-gradient(45deg, #4CAF50, #2E8B57);
     color: #fff;
@@ -18,7 +19,7 @@ header {
     border-bottom: 2px solid #333;
     animation: headerAnimation 2s ease-out;
 }
-
+/* title styling: large font , bold, uppercase, with animation */
 #title {
     font-size: 36px;
     font-weight: 700;
@@ -27,28 +28,30 @@ header {
     margin-bottom: 10px;
     animation: titleBounce 1.5s ease-out infinite alternate;
 }
-
+/* header animation, slides from top */
 @keyframes headerAnimation {
     from {
+        /* starts from above the screen */
         transform: translateY(-100px);
         opacity: 0;
     }
     to {
+        /* move to normal position */
         transform: translateY(0);
         opacity: 1;
     }
 }
-
+/* navigation list styling: removes list bullets, no padding */
 nav ul {
     list-style: none;
     padding: 0;
 }
-
+/* navigation list items: display inline, with spacing between them */
 nav ul li {
     display: inline;
     margin: 0 15px;
 }
-
+/* navigation links: white color, bold text, uppercase with hover */
 nav ul li a {
     color: #fff;
     text-decoration: none;
@@ -58,13 +61,13 @@ nav ul li a {
     letter-spacing: 1px;
     padding: 5px;
 }
-
+/* hover effect for navigation links: changes color and adds bottom border */
 nav ul li a:hover {
     color: #2E8B57;
     border-bottom: 2px solid #2E8B57;
 }
 
-/* Search Section */
+/* Search Section styling: align input and bottom with spacing*/
  #search {
     margin-top: 10px;
     display: flex;
@@ -72,7 +75,7 @@ nav ul li a:hover {
     flex-wrap: wrap;
     gap: 10px;
 }
-
+/* text input styling, padding, width, border, font size */
 input[type="text"] {
     padding: 12px;
     width: 300px;
@@ -80,7 +83,7 @@ input[type="text"] {
     border-radius: 8px;
     font-size: 16px;
 }
-
+/* button styling: padding, bg color, font size, border-radius, cursor change */
 button {
     padding: 12px 20px;
     background-color: #4CAF50;
@@ -91,16 +94,17 @@ button {
     cursor: pointer;
     margin-left: 60px;
 }
-
+/* button hover effect: darker green bg */
 button:hover {
     background-color: #45a049;
 }
 
-/* Map Section */
+/* Map Section styling: width and height w/ rounded corners and shadow */
  #map-canvas {
     width: 90%;
     height: 300px; /* Reduced height */
     margin: 20px auto;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    /* soft shadow around */
 }

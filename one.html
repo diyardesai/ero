@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- this is loading the google maps API with a function for initMap -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmfT2OP4pU6EOrRRsqp57vBSDMnb3O7Is&callback=initMap"></script>
+    <!-- this is for character encoding and viewing settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- page title  -->
     <title>Eco-Transport Route Optimizer</title>
+    <!-- link to external css for design -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <!-- header with title of website and links -->
     <header>
         <h1 id="title">Eco-Transport Route Optimizer</h1>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Find Route</a></li>
-                <li><a href="#">About</a></li>
+                <!-- navigation to home and about pages -->
+                <li><a href="one.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
             </ul>
         </nav>
     </header>
-
+    <!-- search section to input start and end locations, times, and travel mode -->
     <section id="search">
+        <!-- input fields for start and destination -->
         <input id="start" type="text" placeholder="Enter start location">
          <input id="end" type="text" placeholder="Enter destination">
-
+        <!-- input field for selecting time -->
          <label for="time">     </label>
          <input id="time" type="datetime-local" >
- 
+        <!-- dropdown for departure and arrival time -->
          <select id="timeType">
              <option value = "departure">Departure Time</option>
              <option value = "arrival">Arrival Time</option>
          </select>
-         
+         <!-- button to trigger the calculation of the route -->
          <button onclick="calcRoute()">Find Route</button>   
-        
+        <!-- buttons to select travel mode -->
         <button onclick="setTravelMode('DRIVING')">Driving 🚗</button>
         <button onclick="setTravelMode('BICYCLING')">Biking 🚲</button>
         <button onclick="setTravelMode('TRANSIT')">Bus 🚎</button>
         
     </section>
-        
+    <!-- mpa section where the route will be displayed -->
     <section id="map">
         <div id="map-canvas"></div>
     </section>
-
+    <!-- output to display the additional info -->
     <div id="output"></div>
-
+    <!-- link to js script for functionality -->
     <script src="script.js"></script>
     
 </body>
